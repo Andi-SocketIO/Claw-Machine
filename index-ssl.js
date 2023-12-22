@@ -1,3 +1,4 @@
+var fs = require("fs");
 var https = require("https");
 const { createClient } = require("redis");
 const { Server } = require("socket.io");
