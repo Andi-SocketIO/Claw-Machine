@@ -12,9 +12,6 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 
-var HTTP = httpsServer;
-var PORT = port;
-
 var privateKey = fs.readFileSync(
    "/etc/letsencrypt/live/multiplayer-instance.andiwaluyo.com/privkey.pem",
    "utf8"
@@ -25,6 +22,9 @@ var certificate = fs.readFileSync(
 );
 var credentials = { key: privateKey, cert: certificate };
 var httpsServer = https.createServer(credentials, app);
+
+var HTTP = httpsServer;
+var PORT = port;
 
 const io = new Server(HTTP, {
    cors: {
