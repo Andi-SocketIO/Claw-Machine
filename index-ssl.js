@@ -148,7 +148,11 @@ function connection(socket) {
       if (inputKey == null) return;
       if (valueKey == null) return;
 
-      io.to(roomCode).emit("controller", inputKey + ":" + valueKey);
+      if (inputKey == "specialbutton") {
+         io.to(roomCode).emit("controller", "specialbutton");
+      } else {
+         io.to(roomCode).emit("controller", inputKey + ":" + valueKey);
+      }
    });
 
    socket.on("disconnect", () => {
