@@ -149,7 +149,7 @@ function connection(socket) {
       if (valueKey == null) return;
 
       if (inputKey == "specialbutton") {
-         io.to(roomCode).emit("controller", "specialbutton");
+         io.to(roomCode).emit("controller", "specialbutton:0");
       } else {
          io.to(roomCode).emit("controller", inputKey + ":" + valueKey);
       }
