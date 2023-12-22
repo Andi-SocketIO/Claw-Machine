@@ -39,7 +39,8 @@ HTTP.listen(PORT, () => {
    console.log("HTTP Server running on port " + PORT);
 });
 
-var controllerBaseURL = "https://controller.com";
+var controllerBaseURL =
+   "https://g.minigim.fun/claw-machine-controller/index.html";
 
 var users = {};
 var games = {};
